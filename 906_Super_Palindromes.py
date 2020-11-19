@@ -1,19 +1,28 @@
-import * from math as math
+import math
+import time
 
 
 class Solution:
     def superpalindromesInRange(self, L: str, R: str) -> int:
+
+        start = time.time()
+
         L = int(L)
         R = int(R)
         count = 0
 
-        for i in range(R+1, L, -1):
+        for i in range(R, L-1, -1):
             if self.isPalindrom(i):
                 squareRoot = math.sqrt(i)
-                if self.isPalindrome(squareRoot):
+                if squareRoot.is_integer() and self.isPalindrom(int(squareRoot)):
+                    print(i)
                     count += 1
 
+        end = time.time()
+        print(end - start)
+
         print(count)
+        return count
 
     @ staticmethod
     def isPalindrom(num: int) -> bool:
@@ -33,4 +42,4 @@ class Solution:
 
 
 tmp = Solution()
-tmp.superpalindromesInRange("4", "1000")
+tmp.superpalindromesInRange("92904622", "232747148")
