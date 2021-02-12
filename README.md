@@ -1,2 +1,2 @@
 # leetcode
-leetcode puzzles I've solved
+leetcode puzzles I've solved in Python
